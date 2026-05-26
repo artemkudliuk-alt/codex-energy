@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { AnimatePresence } from 'motion/react';
 import BackgroundSystem from './components/BackgroundSystem';
 import Header from './components/Header';
 import Hero from './components/Hero';
@@ -12,9 +13,11 @@ import AnalyticsDashboard from './components/AnalyticsDashboard';
 import ConsultationForm from './components/ConsultationForm';
 import Footer from './components/Footer';
 import CustomCursor from './components/CustomCursor';
+import Preloader from './components/Preloader';
 
 export default function App() {
   const [calculationState, setCalculationState] = useState(60000);
+  const [isLoading, setIsLoading] = useState(true);
 
   // Smooth scroll handler targeting sections securely
   const handleNavigate = (sectionId: string) => {
@@ -33,10 +36,17 @@ export default function App() {
   };
 
   return (
-    <div className="relative text-white font-sans selection:bg-brand-blue selection:text-slate-950 min-h-screen z-10">
-      
-      {/* Cinematic Custom Cursor System */}
-      <CustomCursor />
+    <>
+      <AnimatePresence mode="wait">
+        {isLoading && (
+          <Preloader onComplete={() => setIsLoading(false)} />
+        )}
+      </AnimatePresence>
+
+      <div className="relative text-white font-sans selection:bg-brand-blue selection:text-slate-950 min-h-screen z-10">
+        
+        {/* Cinematic Custom Cursor System */}
+        <CustomCursor />
 
       {/* 1. Cinematic Background & Volumetric Glow overlays */}
       <BackgroundSystem />
@@ -87,5 +97,6 @@ export default function App() {
       <Footer onNavigate={handleNavigate} />
 
     </div>
+    </>
   );
 }
