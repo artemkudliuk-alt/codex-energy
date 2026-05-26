@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Montserrat", sans-serif;
+  --font-display: "Plus Jakarta Sans", "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  
+  --color-dark-bg: #000000;
+  --color-card-bg: rgba(6, 31, 53, 0.5);
+  
+  --color-brand-navy-deep: #061f35;
+  --color-brand-navy-medium: #23305e;
+  --color-brand-blue: #3e69b1;
+  --color-brand-blue-glow: rgba(62, 105, 177, 0.15);
+  
+  --color-brand-orange: #e7520f;
+  --color-brand-orange-glow: rgba(231, 82, 15, 0.15);
+  
+  --color-neutral-light: #ebebeb;
+}
+
+@layer utilities {
+  .glass-card {
+    background: rgba(6, 31, 53, 0.45);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(35, 48, 94, 0.35);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+  }
+  
+  .glass-card-blue {
+    background: rgba(6, 31, 53, 0.55);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(62, 105, 177, 0.25);
+    box-shadow: 0 0 35px rgba(62, 105, 177, 0.08);
+  }
+
+  .glass-card-orange {
+    background: rgba(6, 31, 53, 0.55);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(231, 82, 15, 0.25);
+    box-shadow: 0 0 35px rgba(231, 82, 15, 0.08);
+  }
+
+  .text-glow-blue {
+    text-shadow: 0 0 15px rgba(62, 105, 177, 0.45);
+  }
+
+  .text-glow-orange {
+    text-shadow: 0 0 15px rgba(231, 82, 15, 0.45);
+  }
+
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+
+  .energy-line {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .energy-line::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(62, 105, 177, 0.35) 50%,
+      transparent
+    );
+    animation: energy-flow 4s infinite linear;
+  }
+
+  .energy-line-orange::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(231, 82, 15, 0.35) 50%,
+      transparent
+    );
+    animation: energy-flow 5s infinite linear;
+  }
+
+  @keyframes energy-flow {
+    0% {
+      left: -100%;
+    }
+    100% {
+      left: 150%;
+    }
+  }
+
+  @keyframes scan {
+    0% {
+      transform: translateY(-360px);
+    }
+    100% {
+      transform: translateY(360px);
+    }
+  }
+}
+
+/* Custom premium scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* Base custom resets */
+html {
+  scroll-behavior: smooth;
+  background-color: #000000;
+}
+
+/* Custom Cinematic Cursor hide defaults on desktop */
+@media (hover: hover) and (pointer: fine) {
+  html, body, a, button, select, input, textarea, [role="button"], .interactive-hover {
+    cursor: none !important;
+  }
+}

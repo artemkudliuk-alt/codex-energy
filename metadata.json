@@ -1,0 +1,6 @@
+{
+  "name": "Codex Energy",
+  "description": "Преміальна інвестиційна платформа в енергетичну інфраструктуру",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
