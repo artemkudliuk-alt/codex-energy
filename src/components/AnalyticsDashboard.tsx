@@ -96,16 +96,16 @@ export default function AnalyticsDashboard() {
   const priceCurve = spotChartData.map((d, i) => `${getSpotX(i)},${getSpotY(d.price)}`).join(' L ');
 
   return (
-    <section ref={containerRef} id="analytics" className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 py-32 select-none">
+    <section ref={containerRef} id="analytics" className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 py-16 md:py-32 select-none">
       
       {/* Editorial top section layout */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end mb-16 relative z-10">
         <div className="lg:col-span-8">
           <span className="font-mono text-xs tracking-widest text-[#f97316] uppercase block font-bold">ONLINE SCADA MONITORING</span>
-          <h2 className="font-display font-extrabold text-4xl sm:text-5xl text-white tracking-tight mt-4 uppercase leading-none">
+          <h2 className="font-display font-extrabold text-3xl sm:text-4xl text-white tracking-tight mt-4 uppercase leading-none">
             Інструменти аналітики
           </h2>
-          <p className="font-sans text-xs text-slate-400 mt-4 max-w-xl font-light leading-relaxed">
+          <p className="font-sans text-xs sm:text-sm text-slate-300 mt-4 max-w-xl font-light leading-relaxed">
             Повний прямий доступ до внутрішніх показників генерації та спотових торгових сесій на європейському ринку. Тут представлено живі та ретроспективні параметри індустріальних секторів.
           </p>
         </div>
@@ -143,16 +143,16 @@ export default function AnalyticsDashboard() {
           <motion.div 
             key={elem.label} 
             whileHover={{ y: -3, borderColor: 'rgba(56, 189, 248, 0.2)' }}
-            className="glass-card bg-slate-950/40 border border-white/5 rounded-2xl p-6 relative overflow-hidden group shadow-md transition-all duration-[400ms]"
+            className="glass-card bg-slate-950/40 border border-white/5 rounded-2xl p-5 md:p-6 relative overflow-hidden group shadow-md transition-all duration-[400ms]"
           >
             {/* Ambient HSL glow */}
             <div className="absolute top-0 left-0 w-8 h-8 bg-brand-blue/5 rounded-br-full blur-md opacity-0 group-hover:opacity-100 transition-opacity" />
-            <span className="font-mono text-[8px] tracking-wider text-slate-500 uppercase block font-bold">{elem.label}</span>
+            <span className="font-mono text-[9px] md:text-[10px] tracking-wider text-slate-400 uppercase block font-bold">{elem.label}</span>
             <div className="flex items-baseline justify-between mt-4">
-              <span className="font-display font-black text-2xl text-white group-hover:text-glow-blue transition-all duration-300">
+              <span className="font-display font-black text-2xl sm:text-3xl text-white group-hover:text-glow-blue transition-all duration-300">
                 {elem.value}
               </span>
-              <span className="font-sans text-[10px] text-emerald-400 font-medium">
+              <span className="font-sans text-[10px] sm:text-xs text-emerald-400 font-bold">
                 {elem.change}
               </span>
             </div>
@@ -164,7 +164,7 @@ export default function AnalyticsDashboard() {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch relative z-10">
         
         {/* LEFT COMPONENT INTERFACE (SCADA / SPOT GRAPH) */}
-        <div className="lg:col-span-7 flex flex-col justify-between glass-card rounded-2xl p-6 sm:p-8 border border-white/5 shadow-lg relative overflow-hidden">
+        <div className="lg:col-span-7 flex flex-col justify-between glass-card rounded-2xl p-5 sm:p-8 border border-white/5 shadow-lg relative overflow-hidden">
           
           <div className="relative z-10 flex flex-col h-full justify-between">
             {activeTab === 'scada' ? (
@@ -175,8 +175,8 @@ export default function AnalyticsDashboard() {
                     <Activity className="w-5 h-5 text-brand-orange animate-pulse" />
                     <span className="font-display font-bold text-sm text-white uppercase tracking-wider">Сумарний потік активів</span>
                   </div>
-                  <div className="flex items-center gap-1.5 font-mono text-[9px] text-[#22c55e] bg-[#22c55e]/5 px-2.5 py-1 rounded-md font-bold">
-                    <Database className="w-3 h-3 text-[#22c55e]" />
+                  <div className="flex items-center gap-2 font-mono text-[11px] text-[#22c55e] bg-[#22c55e]/5 px-3 py-1.5 rounded-md font-bold">
+                    <Database className="w-3.5 h-3.5 text-[#22c55e]" />
                     <span>ЖИВИЙ СИГНАЛ SCADA ONLINE</span>
                   </div>
                 </div>
@@ -195,18 +195,18 @@ export default function AnalyticsDashboard() {
                         className="py-4 flex flex-col sm:flex-row items-baseline justify-between gap-4 group cursor-default"
                       >
                         <div className="flex items-center gap-4">
-                          <span className="font-mono text-[10px] text-slate-500">{item.timestamp}</span>
-                          <span className="font-mono text-[10px] bg-slate-900 border border-white/10 text-white font-bold px-2 py-0.5 rounded-md group-hover:border-[#38bdf8]/30 transition-colors">
+                          <span className="font-mono text-[11px] text-slate-400">{item.timestamp}</span>
+                          <span className="font-mono text-[11px] bg-slate-900 border border-white/10 text-white font-bold px-2 py-0.5 rounded-md group-hover:border-[#38bdf8]/30 transition-colors">
                             {item.unit}
                           </span>
-                          <span className="font-sans text-xs text-slate-300 group-hover:text-slate-100 transition-colors font-light">
+                          <span className="font-sans text-xs sm:text-sm text-slate-300 group-hover:text-slate-100 transition-colors font-light">
                             {item.message}
                           </span>
                         </div>
 
                         <div className="flex items-center gap-1 shrink-0">
                           <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                          <span className="font-mono text-[8px] text-slate-500 uppercase font-bold">NOMINAL</span>
+                          <span className="font-mono text-[10px] text-slate-400 uppercase font-bold">NOMINAL</span>
                         </div>
                       </motion.div>
                     ))}
@@ -221,7 +221,7 @@ export default function AnalyticsDashboard() {
                     <Star className="w-5 h-5 text-[#f97316]" />
                     <span className="font-display font-bold text-sm text-white uppercase tracking-wider">Вартість електрики за поточну сесію</span>
                   </div>
-                  <span className="font-mono text-[9px] text-slate-400 uppercase font-bold">ЦІНА В МВТ·ГОД (ЄВРО)</span>
+                  <span className="font-mono text-[11px] text-slate-300 uppercase font-bold">ЦІНА В МВТ·ГОД (ЄВРО)</span>
                 </div>
 
                 <div className="relative mt-4 w-full h-[220px] rounded-xl flex items-center justify-center">
@@ -242,7 +242,7 @@ export default function AnalyticsDashboard() {
                           <text
                             x={graphPadding - 4}
                             y={yPos + 3}
-                            className="fill-slate-500 font-mono text-[9px] font-bold text-right"
+                            className="fill-slate-400 font-mono text-[11px] font-bold text-right"
                             textAnchor="end"
                           >
                             €{spotVal}
@@ -285,13 +285,13 @@ export default function AnalyticsDashboard() {
                           <text
                             x={xPos}
                             y={chartHeight - 10}
-                            className="fill-slate-500 font-mono text-[9px] font-bold"
+                            className="fill-slate-400 font-mono text-[11px] font-bold"
                             textAnchor="middle"
                           >
                             {d.hour}
                           </text>
                           <circle cx={xPos} cy={yPos} r="4" fill="#fafafa" stroke="#ea580c" strokeWidth="1.5" />
-                          <text x={xPos} y={yPos - 10} className="fill-[#f97316] font-mono text-[8px] font-bold" textAnchor="middle">
+                          <text x={xPos} y={yPos - 10} className="fill-[#f97316] font-mono text-[10px] font-bold" textAnchor="middle">
                             €{d.price}
                           </text>
                         </g>
@@ -304,12 +304,12 @@ export default function AnalyticsDashboard() {
 
             {/* Bottom command summary panel */}
             <div className="mt-6 pt-4 border-t border-white/5 flex flex-wrap items-center justify-between gap-4">
-              <span className="font-mono text-[9px] text-slate-500 uppercase tracking-widest leading-none font-bold">
+              <span className="font-mono text-[11px] text-slate-400 uppercase tracking-widest leading-none font-bold">
                 LAST UPDATE DIRECT SENSORS IN 1 SEC
               </span>
               <div className="flex items-center gap-2">
                 <RefreshCw className="w-3.5 h-3.5 text-brand-blue animate-spin" style={{ animationDuration: '8s' }} />
-                <span className="font-sans text-[10px] text-slate-400">Параметри життєдіяльності в межах норми ISO-50001.</span>
+                <span className="font-sans text-xs text-slate-300">Параметри життєдіяльності в межах норми ISO-50001.</span>
               </div>
             </div>
           </div>
@@ -320,29 +320,29 @@ export default function AnalyticsDashboard() {
         <div className="lg:col-span-5 flex flex-col gap-4">
           
           {/* Tile Block 1: Real-time efficiency levels */}
-          <div className="glass-card bg-slate-950/40 rounded-2xl p-6 border border-white/5 relative overflow-hidden group shadow-md">
+          <div className="glass-card bg-slate-950/40 rounded-2xl p-5 md:p-6 border border-white/5 relative overflow-hidden group shadow-md">
             <div className="absolute top-0 right-0 w-12 h-12 bg-emerald-600/5 rounded-full blur-md" />
             <div className="flex items-center justify-between">
-              <span className="font-mono text-[9px] tracking-widest text-[#22c55e] uppercase font-bold">BESS RELIABILITY COEFFICIENT</span>
+              <span className="font-mono text-[9px] md:text-[10px] tracking-widest text-[#22c55e] uppercase font-bold">BESS RELIABILITY COEFFICIENT</span>
               <ShieldCheck className="w-4 h-4 text-[#22c55e]" />
             </div>
             
-            <h4 className="font-display font-black text-2xl text-white mt-4 uppercase">Збереження 98.4%</h4>
-            <p className="font-sans text-xs text-slate-400 mt-2 leading-relaxed font-light">
+            <h4 className="font-display font-black text-2xl sm:text-3xl text-white mt-4 uppercase">Збереження 98.4%</h4>
+            <p className="font-sans text-xs sm:text-sm text-slate-300 mt-2 leading-relaxed font-light">
               Рівень корисного збереження заряду в акумуляторних блоках CATL при добовому утриманні генерації. Мінімальний коефіцієнт деградації осередків.
             </p>
           </div>
 
           {/* Tile Block 2: Grid frequency monitoring */}
-          <div className="glass-card bg-slate-950/40 rounded-2xl p-6 border border-white/5 relative overflow-hidden group shadow-md">
+          <div className="glass-card bg-slate-950/40 rounded-2xl p-5 md:p-6 border border-white/5 relative overflow-hidden group shadow-md">
             <div className="absolute top-0 right-0 w-12 h-12 bg-brand-orange/5 rounded-full blur-md" />
             <div className="flex items-center justify-between">
-              <span className="font-mono text-[9px] tracking-widest text-brand-orange uppercase font-bold">TRANSFORMER STATE TR-1</span>
+              <span className="font-mono text-[9px] md:text-[10px] tracking-widest text-brand-orange uppercase font-bold">TRANSFORMER STATE TR-1</span>
               <Thermometer className="w-4 h-4 text-brand-orange" />
             </div>
 
-            <h4 className="font-display font-black text-2xl text-white mt-4 uppercase">42.1 °C / 50.02 Гц</h4>
-            <p className="font-sans text-xs text-slate-400 mt-2 leading-relaxed font-light">
+            <h4 className="font-display font-black text-2xl sm:text-3xl text-white mt-4 uppercase">42.1 °C / 50.02 Гц</h4>
+            <p className="font-sans text-xs sm:text-sm text-slate-300 mt-2 leading-relaxed font-light">
               Параметри лінійної трансформаторної підстанції під повним електричним завантаженням. Дані SCADA в реальному часі.
             </p>
           </div>
@@ -350,16 +350,16 @@ export default function AnalyticsDashboard() {
           {/* Tile Block 3: Grid active status */}
           <div className="glass-card bg-slate-950/40 rounded-xl p-5 border border-[#38bdf8]/15 flex items-center justify-between shadow-md">
             <div className="flex items-center gap-4">
-              <div className="w-10 h-10 rounded-lg bg-[#38bdf8]/10 flex items-center justify-center text-[#38bdf8]">
-                <Cpu className="w-5 h-5" />
+              <div className="w-11 h-11 rounded-lg bg-[#38bdf8]/10 flex items-center justify-center text-[#38bdf8]">
+                <Cpu className="w-5.5 h-5.5" />
               </div>
               <div>
-                <span className="font-display font-bold text-sm text-white uppercase">Трансляція SCADA</span>
-                <p className="font-sans text-[10px] text-slate-400 mt-0.5">Шифрування потоку AES-256</p>
+                <span className="font-display font-bold text-base text-white uppercase">Трансляція SCADA</span>
+                <p className="font-sans text-xs text-slate-300 mt-0.5">Шифрування потоку AES-256</p>
               </div>
             </div>
 
-            <span className="font-mono text-[9px] bg-[#38bdf8]/15 border border-[#38bdf8]/20 text-[#38bdf8] px-2.5 py-1 rounded-md uppercase font-bold animate-pulse">
+            <span className="font-mono text-[11px] bg-[#38bdf8]/15 border border-[#38bdf8]/20 text-[#38bdf8] px-3.5 py-1.5 rounded-md uppercase font-bold animate-pulse">
               АКТИВНО
             </span>
           </div>

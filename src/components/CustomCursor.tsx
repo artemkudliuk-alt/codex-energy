@@ -144,21 +144,32 @@ export default function CustomCursor() {
         <div
           className={`absolute rounded-full transition-all duration-300 ease-out -translate-x-1/2 -translate-y-1/2 ${
             isClicked 
-              ? 'w-10 h-10 bg-brand-orange/20 blur-[6px]' 
+              ? 'w-10 h-10 bg-brand-orange/15 blur-[6px]' 
               : isHovered 
-                ? 'w-8 h-8 bg-brand-blue/35 blur-[5px]' 
-                : 'w-6 h-6 bg-brand-blue/20 blur-[4px]'
+                ? 'w-14 h-14 bg-brand-blue/20 blur-[8px]' 
+                : 'w-8 h-8 bg-brand-blue/10 blur-[5px]'
           }`}
         />
 
-        {/* 12px core element */}
+        {/* Outline contour circle with transparent center, backdrop-blur, and thin borders */}
         <div
           className={`absolute rounded-full -translate-x-1/2 -translate-y-1/2 transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] ${
             isClicked
-              ? 'w-3 h-3 bg-brand-orange border border-brand-orange/40 scale-95 shadow-[0_0_12px_rgba(231,82,15,0.7)]'
+              ? 'w-[20px] h-[20px] border border-brand-orange/60 bg-white/[0.04] backdrop-blur-[1px] scale-90 shadow-[0_0_12px_rgba(231,82,15,0.3)]'
               : isHovered
-                ? 'w-[14px] h-[14px] bg-brand-blue border border-brand-orange/90 scale-105 shadow-[0_0_10px_rgba(62,105,177,0.5)]'
-                : 'w-3 h-3 bg-brand-blue border border-brand-blue/20 scale-100 shadow-[0_0_8px_rgba(62,105,177,0.4)]'
+                ? 'w-[36px] h-[36px] border border-brand-blue/70 bg-white/[0.03] backdrop-blur-[0.8px] scale-105 shadow-[0_0_10px_rgba(62,105,177,0.3)]'
+                : 'w-[24px] h-[24px] border border-brand-blue/30 bg-white/[0.01] backdrop-blur-[0.5px] scale-100 shadow-[0_0_8px_rgba(62,105,177,0.1)]'
+          }`}
+        />
+
+        {/* Precise inner core tracking dot */}
+        <div
+          className={`absolute rounded-full -translate-x-1/2 -translate-y-1/2 transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+            isClicked
+              ? 'w-1 h-1 bg-brand-orange shadow-[0_0_4px_rgba(231,82,15,0.6)]'
+              : isHovered
+                ? 'w-1.5 h-1.5 bg-brand-orange shadow-[0_0_6px_rgba(231,82,15,0.7)]'
+                : 'w-1 h-1 bg-brand-blue shadow-[0_0_4px_rgba(62,105,177,0.4)]'
           }`}
         />
       </div>

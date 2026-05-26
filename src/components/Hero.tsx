@@ -147,7 +147,7 @@ export default function Hero({ onInvestClick, onMoreClick, onPlayVideo }: HeroPr
                 initial: { duration: 1.8, ease: [0.16, 1, 0.3, 1] },
                 y: { duration: 12, repeat: Infinity, ease: "easeInOut" }
               }}
-              className="font-display font-extrabold text-[15vw] lg:text-[11.5rem] leading-none tracking-[0.08em] select-none text-transparent"
+              className="font-display font-extrabold text-[10vw] sm:text-[8vw] lg:text-[7rem] leading-none tracking-[0.08em] select-none text-transparent"
               style={{
                 WebkitTextStroke: '1px rgba(255, 255, 255, 0.25)',
                 maskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 45%, rgba(0,0,0,0.08) 95%)',
@@ -159,12 +159,12 @@ export default function Hero({ onInvestClick, onMoreClick, onPlayVideo }: HeroPr
           </div>
 
           {/* OVERLAPPING SOVEREIGN SLOGAN */}
-          <div className="relative -mt-[14vw] lg:-mt-[11rem] z-20">
+          <div className="relative -mt-[9vw] lg:-mt-[6.5rem] z-20">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-              className="font-display font-extrabold text-4xl sm:text-5xl lg:text-6xl text-white tracking-tight leading-[1.1] uppercase"
+              className="font-display font-extrabold text-[2.25rem] sm:text-[2.75rem] lg:text-[3.5rem] xl:text-[4.5rem] text-white tracking-tight leading-[1.18] sm:leading-[1.12] uppercase"
             >
               Будуємо. Керуємо.<br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-100 to-brand-blue">
@@ -176,7 +176,7 @@ export default function Hero({ onInvestClick, onMoreClick, onPlayVideo }: HeroPr
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1.2, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-              className="mt-6 font-sans text-base sm:text-lg lg:text-xl text-[#ebebeb] max-w-xl font-light leading-relaxed"
+              className="mt-6 font-sans text-[1.1rem] sm:text-lg lg:text-xl text-[#ebebeb] max-w-2xl font-light leading-relaxed"
             >
               Інвестиції у стабільну енергетику майбутнього. Забезпечте свій капітал ліквідними активами промислового масштабу.
             </motion.p>
@@ -186,31 +186,31 @@ export default function Hero({ onInvestClick, onMoreClick, onPlayVideo }: HeroPr
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1.2, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-              className="mt-10 flex flex-wrap items-center gap-6"
+              className="mt-10 flex flex-wrap items-center gap-5 sm:gap-6"
             >
               {/* Premium Pill Button - Invest Now */}
               <motion.button
                 whileHover={{ scale: 1.015 }}
                 whileTap={{ scale: 0.985 }}
                 onClick={onInvestClick}
-                className="relative group bg-white text-brand-navy-deep font-sans font-semibold tracking-wider text-xs uppercase px-8 py-4 rounded-full flex items-center gap-3 transition-shadow duration-300 hover:shadow-[0_10px_25px_rgba(255,255,255,0.08)] active:scale-[0.98] cursor-pointer"
+                className="relative group bg-white text-brand-navy-deep font-sans font-semibold tracking-wider text-xs sm:text-sm uppercase px-10 py-4.5 rounded-full flex items-center gap-3 transition-shadow duration-300 hover:shadow-[0_12px_30px_rgba(255,255,255,0.08)] active:scale-[0.98] cursor-pointer"
               >
                 <span>Інвестувати зараз</span>
-                <ArrowRight className="w-4 h-4 text-brand-navy-deep group-hover:translate-x-1 transition-transform duration-300" />
+                <ArrowRight className="w-4.5 h-4.5 text-brand-navy-deep group-hover:translate-x-1 transition-transform duration-300" />
               </motion.button>
 
               {/* Text link + Play action */}
               <button
                 onClick={onPlayVideo}
-                className="group flex items-center gap-4 font-sans font-medium tracking-wider text-xs text-[#ebebeb] hover:text-white transition-colors uppercase focus:outline-none cursor-pointer"
+                className="group flex items-center gap-3.5 font-sans font-bold tracking-wider text-xs sm:text-sm text-[#ebebeb] hover:text-white transition-colors uppercase focus:outline-none cursor-pointer"
               >
                 <span>Дізнатися більше</span>
                 <motion.span 
                   whileHover={{ scale: 1.04, borderColor: 'rgba(62, 105, 177, 0.4)', backgroundColor: 'rgba(62, 105, 177, 0.05)' }}
                   whileTap={{ scale: 0.96 }}
-                  className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center bg-slate-900/40 transition-all duration-300"
+                  className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center bg-slate-900/40 transition-all duration-300"
                 >
-                  <Play className="w-4 h-4 fill-white text-white translate-x-[1.5px]" />
+                  <Play className="w-4.5 h-4.5 fill-white text-white translate-x-[1.5px]" />
                 </motion.span>
               </button>
             </motion.div>

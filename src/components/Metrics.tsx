@@ -99,12 +99,12 @@ export default function Metrics() {
 
   const getIcon = (name: string) => {
     switch (name) {
-      case 'TrendingUp': return <TrendingUp className="w-5 h-5 text-brand-blue" />;
-      case 'Zap': return <Zap className="w-5 h-5 text-brand-orange" />;
-      case 'BatteryCharging': return <BatteryCharging className="w-5 h-5 text-brand-blue" />;
-      case 'Euro': return <Euro className="w-5 h-5 text-brand-blue" />;
-      case 'Calendar': return <Calendar className="w-5 h-5 text-brand-orange" />;
-      default: return <Zap className="w-5 h-5 text-brand-blue" />;
+      case 'TrendingUp': return <TrendingUp className="w-6 h-6 text-brand-blue" />;
+      case 'Zap': return <Zap className="w-6 h-6 text-brand-orange" />;
+      case 'BatteryCharging': return <BatteryCharging className="w-6 h-6 text-brand-blue" />;
+      case 'Euro': return <Euro className="w-6 h-6 text-brand-blue" />;
+      case 'Calendar': return <Calendar className="w-6 h-6 text-brand-orange" />;
+      default: return <Zap className="w-6 h-6 text-brand-blue" />;
     }
   };
 
@@ -116,7 +116,7 @@ export default function Metrics() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: '-100px' }}
         transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-        className="glass-card rounded-2xl p-8 md:p-10 border border-brand-navy-medium/30 relative overflow-hidden group/card shadow-[0_20px_50px_rgba(0,0,0,0.8)] bg-brand-navy-deep/20"
+        className="glass-card rounded-2xl p-8 md:p-12 border border-brand-navy-medium/30 relative overflow-hidden group/card shadow-[0_20px_50px_rgba(0,0,0,0.8)] bg-brand-navy-deep/20"
       >
         {/* Soft glowing line indicator running on top border */}
         <div className="absolute top-0 left-0 right-0 h-[1.5px] bg-gradient-to-r from-transparent via-brand-blue/30 to-transparent" />
@@ -137,24 +137,24 @@ export default function Metrics() {
               {/* Circular Icon with brand microglow */}
               <motion.div 
                 whileHover={{ scale: 1.04, borderColor: 'rgba(62, 105, 177, 0.4)' }}
-                className="w-11 h-11 rounded-full bg-black border border-brand-navy-medium/40 flex items-center justify-center transition-all duration-300 relative"
+                className="w-13 h-13 rounded-full bg-black border border-brand-navy-medium/40 flex items-center justify-center transition-all duration-300 relative"
               >
                 <div className="absolute inset-0 rounded-full bg-brand-blue/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm" />
                 {getIcon(m.icon)}
               </motion.div>
 
               {/* Stat Value */}
-              <h3 className="font-display font-extrabold text-2xl md:text-3xl text-white mt-5 tracking-tight group-hover:text-glow-blue transition-all duration-[400ms]">
+              <h3 className="font-display font-extrabold text-2xl sm:text-3xl lg:text-4xl text-white mt-5 tracking-tight group-hover:text-glow-blue transition-all duration-[400ms]">
                 <DigitCounter value={m.value} trigger={isInView} />
               </h3>
 
               {/* Label */}
-              <span className="font-sans font-medium text-xs text-slate-300 mt-2 leading-snug">
+              <span className="font-sans font-medium text-xs sm:text-sm text-slate-300 mt-2.5 leading-snug">
                 {m.label}
               </span>
 
               {/* Sublabel / Detail */}
-              <span className="font-mono text-[9px] tracking-wider text-slate-500 mt-1 uppercase font-bold">
+              <span className="font-mono text-[10px] tracking-wider text-slate-500 mt-1.5 uppercase font-bold">
                 {m.sublabel}
               </span>
             </motion.div>

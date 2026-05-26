@@ -19,10 +19,10 @@ export default function FlagshipProject() {
   };
 
   return (
-    <section ref={containerRef} id="flagship-project" className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 py-32 select-none">
+    <section ref={containerRef} id="flagship-project" className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 py-16 md:py-32 select-none">
       
       {/* 2 or 3 Grid Column Layout */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
         
         {/* LEFT COLUMN: TITLE & INTRO INFO */}
         <div className="lg:col-span-4 flex flex-col justify-between h-full py-4">
@@ -30,13 +30,13 @@ export default function FlagshipProject() {
             <span className="font-mono text-xs font-bold tracking-widest text-[#3e69b1] uppercase block">
               {project.subtitle}
             </span>
-            <h2 className="font-display font-extrabold text-4xl sm:text-5xl text-white tracking-tight uppercase leading-[1.1] mt-4">
+            <h2 className="font-display font-extrabold text-3xl sm:text-4xl text-white tracking-tight uppercase leading-[1.1] mt-4">
               Енергопарк<br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-blue via-slate-100 to-brand-orange">
                 Болград
               </span>
             </h2>
-            <p className="font-sans text-xs text-slate-300 mt-6 leading-relaxed font-light">
+            <p className="font-sans text-xs sm:text-sm text-slate-300 mt-5 leading-relaxed font-light">
               {project.description}
             </p>
           </div>
@@ -46,7 +46,7 @@ export default function FlagshipProject() {
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               onClick={() => setShowBlueprints(true)}
-              className="group border border-brand-navy-medium/40 hover:border-brand-blue/40 rounded-full bg-brand-navy-deep/20 p-1.5 pr-6 flex items-center gap-3 transition-colors duration-[400ms] font-sans text-xs tracking-wider uppercase font-semibold text-white focus:outline-none cursor-pointer"
+              className="group border border-brand-navy-medium/40 hover:border-brand-blue/40 rounded-full bg-brand-navy-deep/20 p-2 pr-6 flex items-center gap-3 transition-colors duration-[400ms] font-sans text-sm tracking-wider uppercase font-semibold text-white focus:outline-none cursor-pointer"
             >
               <span className="w-10 h-10 rounded-full bg-black border border-brand-navy-medium/30 flex items-center justify-center text-[#3e69b1] group-hover:bg-[#3e69b1]/10 group-hover:border-[#3e69b1]/50 transition-all duration-300">
                 <ArrowRight className="w-4 h-4" />
@@ -288,62 +288,62 @@ export default function FlagshipProject() {
         <div className="lg:col-span-3 flex flex-col gap-4">
           
           {/* Card 1: Capacity */}
-          <div className="glass-card bg-brand-navy-deep/10 border border-brand-navy-medium/30 rounded-xl p-5 flex items-center justify-between group cursor-default hover:border-brand-blue/30 transition-all duration-[400ms] shadow-sm">
+          <div className="glass-card bg-brand-navy-deep/10 border border-brand-navy-medium/30 rounded-xl p-4 md:p-5 flex items-center justify-between group cursor-default hover:border-brand-blue/30 transition-all duration-[400ms] shadow-sm">
             <div className="flex flex-col">
-              <span className="font-display font-black text-2xl text-white tracking-tight">
+              <span className="font-display font-black text-2xl sm:text-3xl text-white tracking-tight">
                 {project.capacity}
               </span>
-              <span className="font-sans text-[11px] text-slate-400 mt-1 uppercase font-bold tracking-wider">
+              <span className="font-sans text-[11px] text-slate-300 mt-1.5 uppercase font-bold tracking-wider">
                 встановлена потужність active
               </span>
             </div>
-            <div className="w-10 h-10 rounded-full bg-black border border-brand-navy-medium/30 flex items-center justify-center text-brand-orange group-hover:scale-102 transition-all duration-300">
-              <Sun className="w-5 h-5" />
+            <div className="w-11 h-11 rounded-full bg-black border border-brand-navy-medium/30 flex items-center justify-center text-brand-orange group-hover:scale-102 transition-all duration-300">
+              <Sun className="w-5.5 h-5.5" />
             </div>
           </div>
 
           {/* Card 2: Storage system */}
-          <div className="glass-card bg-brand-navy-deep/10 border border-brand-navy-medium/30 rounded-xl p-5 flex items-center justify-between group cursor-default hover:border-brand-blue/30 transition-all duration-[400ms] shadow-sm">
+          <div className="glass-card bg-brand-navy-deep/10 border border-brand-navy-medium/30 rounded-xl p-4 md:p-5 flex items-center justify-between group cursor-default hover:border-brand-blue/30 transition-all duration-[400ms] shadow-sm">
             <div className="flex flex-col">
-              <span className="font-display font-black text-2xl text-white tracking-tight">
+              <span className="font-display font-black text-2xl sm:text-3xl text-white tracking-tight">
                 {project.storage}
               </span>
-              <span className="font-sans text-[11px] text-slate-400 mt-1 uppercase font-bold tracking-wider">
+              <span className="font-sans text-[11px] text-slate-300 mt-1.5 uppercase font-bold tracking-wider">
                 система зберігання BESS
               </span>
             </div>
-            <div className="w-10 h-10 rounded-full bg-black border border-brand-navy-medium/30 flex items-center justify-center text-brand-blue group-hover:scale-102 transition-all duration-300">
-              <Battery className="w-5 h-5" />
+            <div className="w-11 h-11 rounded-full bg-black border border-brand-navy-medium/30 flex items-center justify-center text-brand-blue group-hover:scale-102 transition-all duration-300">
+              <Battery className="w-5.5 h-5.5" />
             </div>
           </div>
 
           {/* Card 3: Renewable standard ratio */}
-          <div className="glass-card bg-brand-navy-deep/10 border border-brand-navy-medium/30 rounded-xl p-5 flex items-center justify-between group cursor-default hover:border-brand-blue/30 transition-all duration-[400ms] shadow-sm">
+          <div className="glass-card bg-brand-navy-deep/10 border border-brand-navy-medium/30 rounded-xl p-4 md:p-5 flex items-center justify-between group cursor-default hover:border-brand-blue/30 transition-all duration-[400ms] shadow-sm">
             <div className="flex flex-col">
-              <span className="font-display font-black text-2xl text-white tracking-tight">
+              <span className="font-display font-black text-2xl sm:text-3xl text-white tracking-tight">
                 {project.greenEnergy}
               </span>
-              <span className="font-sans text-[11px] text-slate-400 mt-1 uppercase font-bold tracking-wider">
+              <span className="font-sans text-[11px] text-slate-300 mt-1.5 uppercase font-bold tracking-wider">
                 чиста зелена енергія
               </span>
             </div>
-            <div className="w-10 h-10 rounded-full bg-black border border-brand-navy-medium/30 flex items-center justify-center text-brand-blue group-hover:scale-102 transition-all duration-300">
-              <ShieldCheck className="w-5 h-5" />
+            <div className="w-11 h-11 rounded-full bg-black border border-brand-navy-medium/30 flex items-center justify-center text-brand-blue group-hover:scale-102 transition-all duration-300">
+              <ShieldCheck className="w-5.5 h-5.5" />
             </div>
           </div>
 
           {/* Card 4: Launch Quarter schedule */}
-          <div className="glass-card bg-brand-navy-deep/10 border border-brand-orange/20 rounded-xl p-5 flex items-center justify-between group cursor-default hover:border-brand-orange/30 transition-all duration-[400ms] shadow-sm">
+          <div className="glass-card bg-brand-navy-deep/10 border border-brand-orange/20 rounded-xl p-4 md:p-5 flex items-center justify-between group cursor-default hover:border-brand-orange/30 transition-all duration-[400ms] shadow-sm">
             <div className="flex flex-col">
-              <span className="font-display font-black text-2xl text-brand-orange text-glow-orange tracking-tight">
+              <span className="font-display font-black text-2xl sm:text-3xl text-brand-orange text-glow-orange tracking-tight">
                 {project.timeline}
               </span>
-              <span className="font-sans text-[11px] text-slate-400 mt-1 uppercase font-bold tracking-wider">
+              <span className="font-sans text-[11px] text-slate-300 mt-1.5 uppercase font-bold tracking-wider">
                 запуск об'єкта в мережу
               </span>
             </div>
-            <div className="w-10 h-10 rounded-full bg-black border border-brand-orange/20 flex items-center justify-center text-brand-orange group-hover:scale-102 transition-all duration-300">
-              <Calendar className="w-5 h-5" />
+            <div className="w-11 h-11 rounded-full bg-black border border-brand-orange/20 flex items-center justify-center text-brand-orange group-hover:scale-102 transition-all duration-300">
+              <Calendar className="w-5.5 h-5.5" />
             </div>
           </div>
 

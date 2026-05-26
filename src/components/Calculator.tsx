@@ -117,23 +117,23 @@ export default function Calculator() {
   const gridLinesY = [0, maxY * 0.25, maxY * 0.5, maxY * 0.75, maxY];
 
   return (
-    <section id="calculator" className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 py-32 select-none">
+    <section id="calculator" className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 py-16 md:py-32 select-none">
       
       {/* Title block */}
-      <div className="flex flex-col mb-16 items-center text-center">
+      <div className="flex flex-col mb-12 items-center text-center">
         <span className="font-mono text-xs tracking-widest text-brand-orange uppercase block font-bold">IНСТРУМЕНТ КАРТИ РОСТУ</span>
-        <h2 className="font-display font-extrabold text-3xl sm:text-5xl text-white tracking-tight mt-4 uppercase leading-none">
-          Калькулятор доходності
+        <h2 className="font-display font-extrabold text-2xl sm:text-4xl text-white tracking-tight mt-4 uppercase leading-none">
+          Калькулятор прибутковості
         </h2>
-        <p className="font-sans text-xs text-slate-400 mt-4 max-w-md font-light">
+        <p className="font-sans text-xs sm:text-sm text-slate-300 mt-4 max-w-md font-light">
           Проведіть аналіз очікуваної рентабельності вашого капіталу на основі гнучких ринкових сценаріїв та політики реінвестування.
         </p>
         <motion.div 
           initial={{ width: 0 }}
-          whileInView={{ width: 48 }}
+          whileInView={{ width: 36 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="mt-6 h-[2.5px] bg-[#3e69b1]" 
+          className="mt-5 h-[2.5px] bg-[#3e69b1]" 
         />
       </div>
 
@@ -144,7 +144,7 @@ export default function Calculator() {
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true, margin: '-100px' }}
         transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-        className="glass-card rounded-2xl p-6 sm:p-10 border border-brand-navy-medium/30 relative overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.7)]"
+        className="glass-card rounded-2xl p-5 sm:p-8 border border-brand-navy-medium/30 relative overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.7)]"
       >
         {/* Soft glowing orange accent overlay */}
         <div className="absolute top-0 left-0 w-12 h-12 bg-brand-orange/5 rounded-br-2xl blur-[35px] pointer-events-none" />
@@ -155,15 +155,15 @@ export default function Calculator() {
           <div className="lg:col-span-4 flex flex-col justify-between py-2 border-b lg:border-b-0 lg:border-r border-brand-navy-medium/20 lg:pr-10">
             
             <div>
-              <span className="font-mono text-[9px] tracking-widest text-slate-500 uppercase font-bold">ОПЕРАЦІЙНІ ПАРАМЕТРИ</span>
-              <h3 className="font-display font-black text-xl text-white uppercase mt-1">Параметри портфеля</h3>
+              <span className="font-mono text-[11px] tracking-widest text-slate-400 uppercase font-bold">ОПЕРАЦІЙНІ ПАРАМЕТРИ</span>
+              <h3 className="font-display font-black text-2xl text-white uppercase mt-1">Параметри портфеля</h3>
             </div>
 
             {/* Slider 1: Investment Volume */}
             <div className="mt-8">
               <div className="flex justify-between items-end">
-                <span className="font-sans text-xs font-semibold text-slate-400">Інвестиції у розмірі</span>
-                <span className="font-display font-extrabold text-lg text-white text-glow-blue transition-all duration-300">
+                <span className="font-sans text-sm font-semibold text-slate-300">Інвестиції у розмірі</span>
+                <span className="font-display font-extrabold text-xl sm:text-2xl text-white text-glow-blue transition-all duration-300">
                   {formatEuro(params.investment)}
                 </span>
               </div>
@@ -178,7 +178,7 @@ export default function Calculator() {
                   onChange={(e) => setParams({ ...params, investment: Number(e.target.value) })}
                   className="w-full h-1 bg-slate-900 rounded-lg appearance-none cursor-pointer focus:outline-none accent-brand-blue"
                 />
-                <div className="flex justify-between text-[10px] font-mono text-slate-500 mt-2">
+                <div className="flex justify-between text-[11.5px] md:text-[12px] font-mono text-slate-400 mt-2">
                   <span>€20 000</span>
                   <span>€60 000</span>
                   <span>€180 000</span>
@@ -189,8 +189,8 @@ export default function Calculator() {
             {/* Slider 2: Term in Years */}
             <div className="mt-8">
               <div className="flex justify-between items-end">
-                <span className="font-sans text-xs font-semibold text-slate-400">Термін інвестицій</span>
-                <span className="font-display font-extrabold text-lg text-white text-glow-orange transition-all duration-300">
+                <span className="font-sans text-sm font-semibold text-slate-300">Термін інвестицій</span>
+                <span className="font-display font-extrabold text-xl sm:text-2xl text-white text-glow-orange transition-all duration-300">
                   {params.term} {params.term === 1 ? 'рік' : params.term < 5 ? 'роки' : 'років'}
                 </span>
               </div>
@@ -205,7 +205,7 @@ export default function Calculator() {
                   onChange={(e) => setParams({ ...params, term: Number(e.target.value) })}
                   className="w-full h-1 bg-slate-900 rounded-lg appearance-none cursor-pointer focus:outline-none accent-brand-orange"
                 />
-                <div className="flex justify-between text-[10px] font-mono text-slate-500 mt-2">
+                <div className="flex justify-between text-[11.5px] md:text-[12px] font-mono text-slate-400 mt-2">
                   <span>1 рік</span>
                   <span>5 років</span>
                   <span>10 років</span>
@@ -216,17 +216,17 @@ export default function Calculator() {
             {/* Segmented Option: Reinvestment */}
             <div className="mt-8">
               <div className="flex items-center gap-1.5 justify-start">
-                <span className="font-sans text-xs font-semibold text-slate-400">Реінвестування прибутку</span>
+                <span className="font-sans text-sm font-semibold text-slate-300">Реінвестування прибутку</span>
                 <div className="group relative cursor-help">
                   <Info className="w-3.5 h-3.5 text-slate-500 hover:text-white transition-colors" />
-                  <div className="absolute bottom-6 left-1/2 -translate-x-1/2 bg-slate-950 border border-brand-navy-medium/40 px-3 py-2 rounded-lg text-[10px] text-slate-300 w-48 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity z-30 leading-relaxed font-light">
+                  <div className="absolute bottom-6 left-1/2 -translate-x-1/2 bg-slate-950 border border-brand-navy-medium/40 px-3.5 py-2.5 rounded-lg text-[11.5px] md:text-[12px] text-slate-300 w-56 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity z-30 leading-relaxed font-light">
                     Складний відсоток збільшує загальний об'єм генерації за рахунок повторної купівлі паїв.
                   </div>
                 </div>
               </div>
 
               {/* Segmented Buttons Switch */}
-              <div className="grid grid-cols-3 gap-2 mt-4 border border-brand-navy-medium/30 bg-black/80 p-1 rounded-xl">
+              <div className="grid grid-cols-3 gap-2 mt-4 border border-brand-navy-medium/30 bg-black/80 p-1.5 rounded-xl">
                 {[
                   { value: 0, label: 'Ні [0%]' },
                   { value: 0.5, label: '50%' },
@@ -236,7 +236,7 @@ export default function Calculator() {
                     key={opt.value}
                     type="button"
                     onClick={() => setParams({ ...params, reinvestmentRate: opt.value })}
-                    className="font-sans text-[10px] font-semibold py-2 px-1 rounded-lg transition-all uppercase focus:outline-none cursor-pointer text-slate-400 hover:text-slate-200 bg-transparent active:scale-95"
+                    className="font-sans text-[12px] font-bold py-2 px-1 rounded-lg transition-all uppercase focus:outline-none cursor-pointer text-slate-400 hover:text-slate-200 bg-transparent active:scale-95"
                   >
                     <span className={params.reinvestmentRate === opt.value ? "text-white bg-brand-navy-deep border border-brand-navy-medium/40 px-2 py-1 rounded-md block shadow-sm" : ""}>
                       {opt.label}
@@ -252,52 +252,52 @@ export default function Calculator() {
           <div className="lg:col-span-4 grid grid-cols-1 sm:grid-cols-2 gap-4 py-2 border-b lg:border-b-0 lg:border-r border-brand-navy-medium/20 lg:pr-10">
             
             {/* Tile 1: Expected Rate */}
-            <div className="glass-card bg-[#061f35]/20 rounded-xl p-5 border border-brand-navy-medium/30 flex flex-col justify-between group">
-              <span className="font-mono text-[8px] tracking-wider text-slate-500 uppercase block font-bold">СТАВКА ДОХІДНОСТІ</span>
+            <div className="glass-card bg-[#061f35]/20 rounded-xl p-4.5 border border-brand-navy-medium/30 flex flex-col justify-between group">
+              <span className="font-mono text-[9px] md:text-[10px] tracking-wider text-slate-400 uppercase block font-bold">СТАВКА ДОХІДНОСТІ</span>
               <div>
-                <span className="font-display font-black text-2xl sm:text-3xl text-white group-hover:text-glow-blue transition-all duration-300 block w-full truncate">
+                <span className="font-display font-black text-2xl sm:text-3xl xl:text-4xl text-white group-hover:text-glow-blue transition-all duration-300 block w-full truncate">
                   {calculations.averageYield}
                 </span>
-                <p className="font-sans text-[10px] text-slate-400 mt-2 leading-relaxed font-light">
+                <p className="font-sans text-[11px] md:text-[12px] text-slate-400 mt-2 leading-relaxed font-light">
                   Орієнтовний середній річний відсоток паїв.
                 </p>
               </div>
             </div>
 
             {/* Tile 2: Accumulations */}
-            <div className="glass-card bg-[#061f35]/20 rounded-xl p-5 border border-brand-navy-medium/30 flex flex-col justify-between group">
-              <span className="font-mono text-[8px] tracking-wider text-slate-500 uppercase block font-bold">ЧИСТИЙ ПРИБУТОК ЗА {params.term} Р.</span>
+            <div className="glass-card bg-[#061f35]/20 rounded-xl p-4.5 border border-brand-navy-medium/30 flex flex-col justify-between group">
+              <span className="font-mono text-[9px] md:text-[10px] tracking-wider text-slate-400 uppercase block font-bold">ЧИСТИЙ ПРИБУТОК ЗА {params.term} Р.</span>
               <div>
-                <span className="font-display font-black text-lg sm:text-xl xl:text-2xl text-white tracking-tighter sm:tracking-tight whitespace-nowrap overflow-hidden text-ellipsis block w-full group-hover:text-glow-orange transition-all duration-300">
+                <span className="font-display font-black text-xl sm:text-2xl xl:text-3xl text-white tracking-tighter sm:tracking-tight whitespace-nowrap overflow-hidden text-ellipsis block w-full group-hover:text-glow-orange transition-all duration-300">
                   {formatEuro(calculations.netProfit)}
                 </span>
-                <p className="font-sans text-[10px] text-slate-400 mt-2 leading-relaxed font-light">
+                <p className="font-sans text-[11px] md:text-[12px] text-slate-400 mt-2 leading-relaxed font-light">
                   Формується за обраний термін інвестицій.
                 </p>
               </div>
             </div>
 
             {/* Tile 3: 10 year total BASE model */}
-            <div className="glass-card bg-[#061f35]/20 rounded-xl p-5 border border-brand-navy-medium/30 flex flex-col justify-between group">
-              <span className="font-mono text-[8px] tracking-wider text-slate-500 uppercase block font-bold">КУМУЛЯТИВ за 10 років</span>
+            <div className="glass-card bg-[#061f35]/20 rounded-xl p-4.5 border border-brand-navy-medium/30 flex flex-col justify-between group">
+              <span className="font-mono text-[9px] md:text-[10px] tracking-wider text-slate-400 uppercase block font-bold">КУМУЛЯТИВ за 10 років</span>
               <div>
-                <span className="font-display font-black text-lg sm:text-xl xl:text-2xl text-white tracking-tighter sm:tracking-tight whitespace-nowrap overflow-hidden text-ellipsis block w-full">
+                <span className="font-display font-black text-xl sm:text-2xl xl:text-3xl text-white tracking-tighter sm:tracking-tight whitespace-nowrap overflow-hidden text-ellipsis block w-full">
                   {formatEuro(calculations.chartData[10].baseVal - params.investment)}
                 </span>
-                <p className="font-sans text-[10px] text-slate-400 mt-2 leading-relaxed font-light">
+                <p className="font-sans text-[11px] md:text-[12px] text-slate-400 mt-2 leading-relaxed font-light">
                   Загальний накопичений чистий дохід (Базовий).
                 </p>
               </div>
             </div>
 
             {/* Tile 4: 10 year OPTIMISTIC model */}
-            <div className="glass-card bg-[#061f35]/20 rounded-xl p-5 border border-brand-orange/20 flex flex-col justify-between group relative overflow-hidden">
-              <span className="font-mono text-[8px] tracking-wider text-brand-orange uppercase block font-bold">ОПТИМІСТИЧНИЙ за 10 р.</span>
+            <div className="glass-card bg-[#061f35]/20 rounded-xl p-4.5 border border-brand-orange/20 flex flex-col justify-between group relative overflow-hidden">
+              <span className="font-mono text-[9px] md:text-[10px] tracking-wider text-brand-orange uppercase block font-bold">ОПТИМІСТИЧНИЙ за 10 р.</span>
               <div>
-                <span className="font-display font-black text-lg sm:text-xl xl:text-2xl text-brand-orange text-glow-orange tracking-tighter sm:tracking-tight whitespace-nowrap overflow-hidden text-ellipsis block w-full">
+                <span className="font-display font-black text-xl sm:text-2xl xl:text-3xl text-brand-orange text-glow-orange tracking-tighter sm:tracking-tight whitespace-nowrap overflow-hidden text-ellipsis block w-full">
                   {formatEuro(calculations.chartData[10].optimisticVal - params.investment)}
                 </span>
-                <p className="font-sans text-[10px] text-slate-400 mt-2 leading-relaxed font-light">
+                <p className="font-sans text-[11px] md:text-[12px] text-slate-400 mt-2 leading-relaxed font-light">
                   При оптимістичній генерації сонячних активів.
                 </p>
               </div>
@@ -311,26 +311,26 @@ export default function Calculator() {
             {/* Header info */}
             <div className="flex items-center justify-between">
               <div>
-                <span className="font-mono text-[9px] tracking-widest text-brand-orange uppercase block font-bold">FORECASTING ANALYSIS</span>
-                <h4 className="font-display font-black text-sm text-white uppercase mt-0.5 leading-none">Прогноз доходу</h4>
+                <span className="font-mono text-[11px] tracking-widest text-brand-orange uppercase block font-bold">FORECASTING ANALYSIS</span>
+                <h4 className="font-display font-black text-base text-white uppercase mt-0.5 leading-none">Прогноз доходу</h4>
               </div>
               
               {/* Chart Legend */}
-              <div className="flex flex-col gap-1.5 text-[9px] font-sans">
+              <div className="flex flex-col gap-1.5 text-[11px] font-sans font-medium">
                 <div className="flex items-center gap-1.5">
                   <span className="w-2.5 h-1.5 bg-brand-blue rounded-full" />
-                  <span className="text-slate-400">Сценарій базовий</span>
+                  <span className="text-slate-300">Сценарій базовий</span>
                 </div>
                 <div className="flex items-center gap-1.5">
                   <span className="w-2.5 h-1.5 bg-brand-orange rounded-full" />
-                  <span className="text-slate-400">Оптимістичний</span>
+                  <span className="text-slate-300">Оптимістичний</span>
                 </div>
               </div>
             </div>
 
             {/* Interactive Vector Graph */}
             <div className="relative mt-4 w-full h-[200px] bg-black/40 rounded-xl border border-brand-navy-medium/20 flex items-center justify-center p-2">
-              <svg viewBox={`0 0 ${svgWidth} ${svgHeight}`} className="w-full h-full text-slate-500 overflow-visible">
+              <svg viewBox={`0 0 ${svgWidth} ${svgHeight}`} className="w-full h-full text-slate-400 overflow-visible">
                 {/* Horizontal y-axis grid lines with metrics */}
                 {gridLinesY.map((yVal, i) => {
                   const yPos = getY(yVal);
@@ -347,7 +347,7 @@ export default function Calculator() {
                       <text
                         x={padding - 3}
                         y={yPos + 3}
-                        className="fill-slate-500 font-mono text-[9px] font-bold text-right"
+                        className="fill-slate-400 font-mono text-[11px] font-bold text-right"
                         textAnchor="end"
                       >
                         {yVal >= 1000 ? `€${Math.round(yVal / 1000)}k` : `€${yVal}`}
@@ -388,7 +388,7 @@ export default function Calculator() {
                       <text
                         x={xPos}
                         y={svgHeight - 12}
-                        className="fill-slate-500 font-mono text-[9px] font-bold text-center"
+                        className="fill-slate-400 font-mono text-[11px] font-bold text-center"
                         textAnchor="middle"
                       >
                         {year}
@@ -401,7 +401,7 @@ export default function Calculator() {
                 <text
                   x={svgWidth - padding}
                   y={svgHeight - 12}
-                  className="fill-slate-400 font-mono text-[9px] font-bold"
+                  className="fill-slate-300 font-mono text-[11px] font-bold"
                   textAnchor="start"
                 >
                   роки
@@ -438,8 +438,8 @@ export default function Calculator() {
               </svg>
 
               {/* Interactive Tooltip showing exactly current selected year outcomes */}
-              <div className="absolute bottom-2 left-1/2 -translate-x-1/2 bg-black border border-brand-navy-medium/30 px-3 py-1.5 rounded-lg flex items-center gap-3 select-none pointer-events-none text-[10px] font-mono z-10 shadow-lg">
-                <span className="text-slate-400 text-glow-blue font-bold">РІК {params.term}: </span>
+              <div className="absolute bottom-2 left-1/2 -translate-x-1/2 bg-black border border-brand-navy-medium/30 px-3.5 py-2 rounded-lg flex items-center gap-3 select-none pointer-events-none text-[12px] font-mono z-10 shadow-lg">
+                <span className="text-slate-300 text-glow-blue font-bold">РІК {params.term}: </span>
                 <span className="text-[#3e69b1] font-bold">{formatEuro(calculations.chartData[params.term].baseVal)}</span>
                 <span className="text-slate-500">|</span>
                 <span className="text-[#e7520f] font-bold">{formatEuro(calculations.chartData[params.term].optimisticVal)}</span>
@@ -447,8 +447,8 @@ export default function Calculator() {
             </div>
 
             {/* Bottom active status tag */}
-            <div className="mt-4 flex items-center gap-2 text-[10px] font-mono text-slate-400 border border-brand-navy-medium/20 bg-brand-navy-deep/20 p-2.5 rounded-lg">
-              <Activity className="w-3.5 h-3.5 text-[#3e69b1]" />
+            <div className="mt-4 flex items-center gap-2 text-[12px] font-mono text-slate-300 border border-brand-navy-medium/20 bg-brand-navy-deep/20 p-3.5 rounded-lg">
+              <Activity className="w-4 h-4 text-[#3e69b1]" />
               <span>Прогноз виконано за ринковим коефіцієнтом стабільності.</span>
             </div>
 

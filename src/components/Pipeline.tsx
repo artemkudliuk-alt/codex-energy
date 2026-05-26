@@ -46,20 +46,20 @@ export default function Pipeline() {
   };
 
   return (
-    <section id="how-it-works" className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 py-32 select-none">
+    <section id="how-it-works" className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 py-16 md:py-32 select-none">
       
       {/* Container holding the Header */}
-      <div className="flex flex-col mb-16">
+      <div className="flex flex-col mb-12">
         <span className="font-mono text-xs tracking-widest text-brand-blue uppercase block font-bold">ЕКОСИСТЕМА РЕНТАБЕЛЬНОСТІ</span>
-        <h2 className="font-display font-extrabold text-4xl sm:text-5xl text-white tracking-tight mt-4 uppercase">
+        <h2 className="font-display font-extrabold text-3xl sm:text-4xl text-white tracking-tight mt-4 uppercase">
           Як це працює
         </h2>
         <motion.div 
           initial={{ width: 0 }}
-          whileInView={{ width: 64 }}
+          whileInView={{ width: 48 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="mt-6 h-[2.5px] bg-brand-orange" 
+          className="mt-5 h-[2.5px] bg-brand-orange" 
         />
       </div>
 
@@ -111,7 +111,7 @@ export default function Pipeline() {
                   borderColor: 'rgba(62, 105, 177, 0.25)',
                   boxShadow: '0 15px 30px rgba(0,0,0,0.6)'
                 }}
-                className="glass-card rounded-2xl p-8 border border-brand-navy-medium/30 hover:bg-brand-navy-deep/20 transition-all duration-300 flex flex-col items-center text-center relative h-full cursor-default"
+                 className="glass-card rounded-2xl p-5 md:p-8 border border-brand-navy-medium/30 hover:bg-brand-navy-deep/20 transition-all duration-300 flex flex-col items-center text-center relative h-full cursor-default"
               >
                 {/* Micro numerical indicator inside card background outline */}
                 <div className="absolute top-4 right-6 font-display font-black text-white/5 text-4xl select-none group-hover:text-brand-orange/5 transition-colors">
@@ -119,7 +119,7 @@ export default function Pipeline() {
                 </div>
 
                 {/* Node Orb with active glowing rings */}
-                <div className="w-[104px] h-[104px] rounded-full bg-black border border-brand-navy-medium/30 group-hover:border-brand-blue/30 flex items-center justify-center relative transition-colors duration-500">
+                <div className="w-[88px] h-[88px] rounded-full bg-black border border-brand-navy-medium/30 group-hover:border-brand-blue/30 flex items-center justify-center relative transition-colors duration-500">
                   {/* Rotating dashed ring always active, accelerating on hover */}
                   <motion.div 
                     animate={{ rotate: 360 }}
@@ -143,15 +143,15 @@ export default function Pipeline() {
                 </div>
 
                 {/* Step Headline */}
-                <span className="font-mono text-[9px] tracking-[0.2em] text-[#e7520f] uppercase block mt-8 font-bold">
+                <span className="font-mono text-[10px] tracking-[0.2em] text-[#e7520f] uppercase block mt-8 font-bold">
                   {step.number} {step.title}
                 </span>
 
-                <h4 className="font-display font-bold text-sm text-white mt-3 group-hover:text-brand-blue transition-colors">
+                <h4 className="font-display font-bold text-sm md:text-base text-white mt-3 group-hover:text-brand-blue transition-colors">
                   {step.subtitle}
                 </h4>
 
-                <p className="font-sans text-[11px] text-slate-300 mt-4 leading-relaxed font-light">
+                <p className="font-sans text-[12px] sm:text-[13px] text-slate-400 mt-4 leading-relaxed font-light">
                   {step.details}
                 </p>
 

@@ -53,15 +53,15 @@ export default function VideoShowcase() {
         <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/[0.02] to-white/[0.02] pointer-events-none" />
 
         {/* Left Aligned Content */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/30 to-transparent p-12 md:p-16 flex flex-col justify-center pointer-events-none">
+        <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/30 to-transparent p-8 md:p-12 flex flex-col justify-center pointer-events-none">
           <div className="max-w-md select-none">
-            <span className="font-mono text-[9px] tracking-[0.2em] text-[#e7520f] uppercase block font-bold">PREVIEW PRESENTATION</span>
-            <h3 className="font-display font-extrabold text-3xl sm:text-4xl lg:text-5xl text-white tracking-tight leading-[1.1] uppercase mt-4">
+            <span className="font-mono text-[10px] tracking-[0.2em] text-[#e7520f] uppercase block font-bold">PREVIEW PRESENTATION</span>
+            <h3 className="font-display font-extrabold text-2xl sm:text-3xl lg:text-4xl text-white tracking-tight leading-[1.1] uppercase mt-4">
               Інфраструктура<br />
               енергетичного<br />
               майбутнього
             </h3>
-            <p className="font-sans text-xs text-slate-400 mt-6 max-w-sm font-light leading-relaxed">
+            <p className="font-sans text-xs sm:text-sm text-slate-300 mt-5 max-w-sm font-light leading-relaxed">
               Дивіться відео-презентацію комплексу та інженерного парку "Болград" у промисловому форматі.
             </p>
           </div>
@@ -72,11 +72,11 @@ export default function VideoShowcase() {
           <motion.div
             whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.96 }}
-            className="w-18 h-18 rounded-full border border-white/10 bg-black/90 flex items-center justify-center relative group-hover:border-brand-orange/40 transition-all duration-[400ms] shadow-2xl"
+            className="w-15 h-15 rounded-full border border-white/10 bg-black/90 flex items-center justify-center relative group-hover:border-brand-orange/40 transition-all duration-[400ms] shadow-2xl"
           >
             {/* Active pulsating glowing rings */}
             <div className="absolute inset-0 rounded-full border border-brand-orange/20 animate-ping opacity-25" />
-            <Play className="w-6 h-6 text-white fill-white translate-x-[1.5px]" />
+            <Play className="w-5 h-5 text-white fill-white translate-x-[1.5px]" />
           </motion.div>
         </div>
 
@@ -117,8 +117,8 @@ export default function VideoShowcase() {
                 <div className="flex items-center justify-between z-10">
                   <div className="flex items-center gap-3">
                     <div className="w-2.5 h-2.5 rounded-full bg-brand-orange animate-ping" />
-                    <span className="font-mono text-[10px] tracking-wider text-[#ebebeb] uppercase flex items-center gap-1.5 font-bold">
-                      <Radio className="w-3.5 h-3.5 text-brand-orange" />
+                    <span className="font-mono text-[12px] tracking-wider text-[#ebebeb] uppercase flex items-center gap-2 font-bold">
+                      <Radio className="w-4 h-4 text-brand-orange" />
                       LIVE FEED: CODEX BOLGRAD COMMAND CENTER
                     </span>
                   </div>
@@ -134,24 +134,24 @@ export default function VideoShowcase() {
                 {/* Bottom stats panel */}
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 backdrop-blur-md bg-brand-navy-deep/80 border border-brand-navy-medium/30 p-4 rounded-xl z-10 w-full mt-auto">
                   <div>
-                    <span className="font-mono text-[9px] tracking-wider text-slate-400 uppercase flex items-center gap-1 font-bold">
-                      <Cpu className="w-3 h-3 text-brand-blue" /> SYSTEM STATE
+                    <span className="font-mono text-[11px] tracking-wider text-slate-300 uppercase flex items-center gap-1 font-bold">
+                      <Cpu className="w-3.5 h-3.5 text-brand-blue" /> SYSTEM STATE
                     </span>
-                    <p className="font-display font-bold text-sm text-emerald-500 uppercase mt-0.5">NOMINAL (99.8%)</p>
+                    <p className="font-display font-bold text-base text-emerald-500 uppercase mt-0.5">NOMINAL (99.8%)</p>
                   </div>
                   <div>
-                    <span className="font-mono text-[9px] tracking-wider text-slate-400 uppercase flex items-center gap-1 font-bold">
-                      <Activity className="w-3 h-3 text-brand-blue" /> GENERATION RATE
+                    <span className="font-mono text-[11px] tracking-wider text-slate-300 uppercase flex items-center gap-1 font-bold">
+                      <Activity className="w-3.5 h-3.5 text-brand-blue" /> GENERATION RATE
                     </span>
-                    <p className="font-display font-bold text-sm text-white mt-0.5">3.24 MW ACTIVE</p>
+                    <p className="font-display font-bold text-base text-white mt-0.5">3.24 MW ACTIVE</p>
                   </div>
                   <div>
-                    <span className="font-mono text-[9px] tracking-wider text-slate-400 uppercase font-bold">STORAGE TEMP</span>
-                    <p className="font-display font-bold text-sm text-white mt-0.5">18.4 °C (OPTIMAL)</p>
+                    <span className="font-mono text-[11px] tracking-wider text-slate-300 uppercase font-bold">STORAGE TEMP</span>
+                    <p className="font-display font-bold text-base text-white mt-0.5">18.4 °C (OPTIMAL)</p>
                   </div>
                   <div>
-                    <span className="font-mono text-[9px] tracking-wider text-slate-400 uppercase font-bold">FREQUENCY LEVEL</span>
-                    <p className="font-display font-bold text-sm text-white mt-0.5">50.02 Hz</p>
+                    <span className="font-mono text-[11px] tracking-wider text-slate-300 uppercase font-bold">FREQUENCY LEVEL</span>
+                    <p className="font-display font-bold text-base text-white mt-0.5">50.02 Hz</p>
                   </div>
                 </div>
 
